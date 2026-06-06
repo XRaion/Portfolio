@@ -76,9 +76,9 @@ export default function App() {
             JD
           </div>
           <div className="flex-1">
-            <h2 className="text-4xl font-bold mb-4">Hi, I'm Jane Doe</h2>
+            <h2 className="text-4xl font-bold mb-4">Hi, I'm Kaitlyn Arabelo</h2>
             <p className="text-xl text-slate-600 mb-6">
-              Full-Stack Developer & AI Enthusiast
+              Full time Senior Undergraduate Student & Bioengineering Enthusiast
             </p>
             <p className="text-slate-700 mb-6 leading-relaxed">
               I'm a passionate Bioengineer with over 3 years of experience building diagnostic systems. I specialize in data analysis, with a
@@ -92,7 +92,7 @@ export default function App() {
               </div>
               <div className="flex items-center gap-2 text-slate-600">
                 <Mail className="w-4 h-4" />
-                <span>jane.doe@example.com</span>
+                <span>Kaitlynarabelo@gmail.com</span>
               </div>
             </div>
             <div className="flex gap-4">

@@ -1,0 +1,224 @@
+import { Mail, MapPin, Github, Linkedin, Code2, BookOpen, Coffee, Camera, Music, Dumbbell, ExternalLink } from 'lucide-react';
+
+export default function App() {
+  const projects = [
+    {
+      title: "E-Commerce Platform",
+      description: "A full-stack e-commerce solution with payment integration, inventory management, and real-time analytics.",
+      tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
+      link: "#"
+    },
+    {
+      title: "AI Chat Assistant",
+      description: "Intelligent chatbot using natural language processing to provide customer support and recommendations.",
+      tech: ["Python", "TensorFlow", "FastAPI", "React"],
+      link: "#"
+    },
+    {
+      title: "Task Management App",
+      description: "Collaborative project management tool with real-time updates, team collaboration, and Kanban boards.",
+      tech: ["TypeScript", "Next.js", "MongoDB", "WebSocket"],
+      link: "#"
+    },
+    {
+      title: "Data Visualization Dashboard",
+      description: "Interactive analytics dashboard for visualizing complex datasets with customizable charts and reports.",
+      tech: ["React", "D3.js", "Python", "Flask"],
+      link: "#"
+    }
+  ];
+
+  const skills = {
+    "Languages": ["JavaScript", "TypeScript", "Python", "Java", "Go"],
+    "Frontend": ["React", "Next.js", "Vue.js", "Tailwind CSS", "Redux"],
+    "Backend": ["Node.js", "Express", "Django", "FastAPI", "GraphQL"],
+    "Database": ["PostgreSQL", "MongoDB", "Redis", "MySQL"],
+    "DevOps": ["Docker", "Kubernetes", "AWS", "CI/CD", "Git"]
+  };
+
+  const publications = [
+    {
+      title: "Optimizing React Performance in Large-Scale Applications",
+      journal: "Journal of Web Engineering",
+      year: 2025,
+      link: "#"
+    },
+    {
+      title: "Machine Learning Approaches for Real-Time Data Processing",
+      journal: "IEEE Computer Society",
+      year: 2024,
+      link: "#"
+    },
+    {
+      title: "Microservices Architecture: Best Practices and Patterns",
+      journal: "Software Engineering Monthly",
+      year: 2024,
+      link: "#"
+    }
+  ];
+
+  const hobbies = [
+    { icon: <Camera className="w-6 h-6" />, name: "Photography", description: "Landscape and street photography" },
+    { icon: <Music className="w-6 h-6" />, name: "Music", description: "Playing guitar and producing electronic music" },
+    { icon: <BookOpen className="w-6 h-6" />, name: "Reading", description: "Sci-fi novels and tech blogs" },
+    { icon: <Dumbbell className="w-6 h-6" />, name: "Fitness", description: "Weightlifting and running" }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+      {/* Header */}
+      <header className="bg-white shadow-sm sticky top-0 z-50">
+        <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="font-bold text-xl">Portfolio</h1>
+          <div className="flex gap-6">
+            <a href="#about" className="hover:text-blue-600 transition-colors">About</a>
+            <a href="#projects" className="hover:text-blue-600 transition-colors">Projects</a>
+            <a href="#skills" className="hover:text-blue-600 transition-colors">Skills</a>
+            <a href="#publications" className="hover:text-blue-600 transition-colors">Publications</a>
+            <a href="#hobbies" className="hover:text-blue-600 transition-colors">Hobbies</a>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero / About Section */}
+      <section id="about" className="max-w-6xl mx-auto px-6 py-20">
+        <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-6xl flex-shrink-0">
+            JD
+          </div>
+          <div className="flex-1">
+            <h2 className="text-4xl font-bold mb-4">Hi, I'm Jane Doe</h2>
+            <p className="text-xl text-slate-600 mb-6">
+              Full-Stack Developer & AI Enthusiast
+            </p>
+            <p className="text-slate-700 mb-6 leading-relaxed">
+              I'm a passionate software engineer with over 8 years of experience building scalable web applications
+              and machine learning systems. I specialize in creating elegant solutions to complex problems, with a
+              focus on user experience and performance optimization. Currently working on cutting-edge AI applications
+              and contributing to open-source projects.
+            </p>
+            <div className="flex flex-wrap gap-4 mb-6">
+              <div className="flex items-center gap-2 text-slate-600">
+                <MapPin className="w-4 h-4" />
+                <span>San Francisco, CA</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-600">
+                <Mail className="w-4 h-4" />
+                <span>jane.doe@example.com</span>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <a href="#" className="p-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition-colors">
+                <Github className="w-5 h-5" />
+              </a>
+              <a href="#" className="p-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="bg-white py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-12">Featured Projects</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <div key={index} className="bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+                <p className="text-slate-600 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech, i) => (
+                    <span key={i} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a href={project.link} className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700">
+                  View Project <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Skills Section */}
+      <section id="skills" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center gap-3 mb-12">
+            <Code2 className="w-8 h-8 text-blue-600" />
+            <h2 className="text-3xl font-bold">Technical Skills</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Object.entries(skills).map(([category, items]) => (
+              <div key={category} className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="font-bold mb-4 text-lg text-blue-600">{category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {items.map((skill, i) => (
+                    <span key={i} className="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-sm">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Publications Section */}
+      <section id="publications" className="bg-white py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center gap-3 mb-12">
+            <BookOpen className="w-8 h-8 text-blue-600" />
+            <h2 className="text-3xl font-bold">Publications</h2>
+          </div>
+          <div className="space-y-6">
+            {publications.map((pub, index) => (
+              <div key={index} className="bg-slate-50 rounded-xl p-6 hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-bold mb-2">{pub.title}</h3>
+                <p className="text-slate-600 mb-3">
+                  {pub.journal} • {pub.year}
+                </p>
+                <a href={pub.link} className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700">
+                  Read Publication <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hobbies Section */}
+      <section id="hobbies" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center gap-3 mb-12">
+            <Coffee className="w-8 h-8 text-blue-600" />
+            <h2 className="text-3xl font-bold">Hobbies & Interests</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {hobbies.map((hobby, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-4">
+                  {hobby.icon}
+                </div>
+                <h3 className="font-bold mb-2">{hobby.name}</h3>
+                <p className="text-slate-600 text-sm">{hobby.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-white py-12">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <p className="mb-4">Let's work together!</p>
+          <p className="text-slate-400">© 2026 Jane Doe. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}

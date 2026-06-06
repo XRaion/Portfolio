@@ -3,19 +3,19 @@ import { Mail, MapPin, Github, Linkedin, Code2, BookOpen, Coffee, Camera, Music,
 export default function App() {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with payment integration, inventory management, and real-time analytics.",
+      title: " My Platform",
+      description: "A BioEngineering Undegraduate with Experience in Cell Culture and...",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
       link: "#"
     },
     {
-      title: "AI Chat Assistant",
-      description: "Intelligent chatbot using natural language processing to provide customer support and recommendations.",
+      title: "Research Assistant - Mittal Lab, UC San Diego Health",
+      description:"Worked on developing a pipeline, Evaluated Swallowing disorders on ManoView",
       tech: ["Python", "TensorFlow", "FastAPI", "React"],
-      link: "#"
+      link: "https://beng187-d-group30.vercel.app/team.html"
     },
     {
-      title: "Task Management App",
+      title: "Research Assistant - Aran Lab, Bioengineering Department",
       description: "Collaborative project management tool with real-time updates, team collaboration, and Kanban boards.",
       tech: ["TypeScript", "Next.js", "MongoDB", "WebSocket"],
       link: "#"
@@ -29,8 +29,8 @@ export default function App() {
   ];
 
   const skills = {
-    "Languages": ["JavaScript", "TypeScript", "Python", "Java", "Go"],
-    "Frontend": ["React", "Next.js", "Vue.js", "Tailwind CSS", "Redux"],
+    "Software": ["Manoview", "Matlab", "Python", "Solidworks", "Figma"],
+    "Wet-Lab": ["React", "Next.js", "Vue.js", "Tailwind CSS", "Redux"],
     "Backend": ["Node.js", "Express", "Django", "FastAPI", "GraphQL"],
     "Database": ["PostgreSQL", "MongoDB", "Redis", "MySQL"],
     "DevOps": ["Docker", "Kubernetes", "AWS", "CI/CD", "Git"]

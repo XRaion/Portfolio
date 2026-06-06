@@ -9,7 +9,7 @@ export default function App() {
       link: "https://beng187-d-group30.vercel.app/team.html"
     },
     {
-      title: "Research Assistant - Aran Lab, Bioengineering Department",
+      title: "Research Assistant - Aran Lab",
       description: "Built Microfluidics Brain on Chips",
       tech: ["Glowforge", "SolidWorks", "Chromatography Sequencing"],
       link: "#"
@@ -81,9 +81,8 @@ export default function App() {
               Full-Stack Developer & AI Enthusiast
             </p>
             <p className="text-slate-700 mb-6 leading-relaxed">
-              I'm a passionate software engineer with over 8 years of experience building scalable web applications
-              and machine learning systems. I specialize in creating elegant solutions to complex problems, with a
-              focus on user experience and performance optimization. Currently working on cutting-edge AI applications
+              I'm a passionate Bioengineer with over 3 years of experience building diagnostic systems. I specialize in data analysis, with a
+              focus patient care. Currently working on cutting-edge research
               and contributing to open-source projects.
             </p>
             <div className="flex flex-wrap gap-4 mb-6">

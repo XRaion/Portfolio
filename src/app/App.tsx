@@ -3,29 +3,18 @@ import { Mail, MapPin, Github, Linkedin, Code2, BookOpen, Coffee, Camera, Music,
 export default function App() {
   const projects = [
     {
-      title: " My Platform",
-      description: "A BioEngineering Undegraduate with Experience in Cell Culture and...",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      link: "#"
-    },
-    {
-      title: "Research Assistant - Mittal Lab, UC San Diego Health",
+      title: "Research Assistant - Mittal Lab",
       description:"Worked on developing a pipeline, Evaluated Swallowing disorders on ManoView",
-      tech: ["Python", "TensorFlow", "FastAPI", "React"],
+      tech: ["Python", "Matlab", "Manoview", "DPlots"],
       link: "https://beng187-d-group30.vercel.app/team.html"
     },
     {
       title: "Research Assistant - Aran Lab, Bioengineering Department",
-      description: "Collaborative project management tool with real-time updates, team collaboration, and Kanban boards.",
-      tech: ["TypeScript", "Next.js", "MongoDB", "WebSocket"],
+      description: "Built Microfluidics Brain on Chips",
+      tech: ["Glowforge", "SolidWorks", "Chromatography Sequencing"],
       link: "#"
     },
-    {
-      title: "Data Visualization Dashboard",
-      description: "Interactive analytics dashboard for visualizing complex datasets with customizable charts and reports.",
-      tech: ["React", "D3.js", "Python", "Flask"],
-      link: "#"
-    }
+  
   ];
 
   const skills = {

@@ -18,39 +18,20 @@ export default function App() {
   ];
 
   const skills = {
-    "Software": ["Manoview", "Matlab", "Python", "Solidworks", "Figma"],
-    "Wet-Lab": ["React", "Next.js", "Vue.js", "Tailwind CSS", "Redux"],
-    "Backend": ["Node.js", "Express", "Django", "FastAPI", "GraphQL"],
-    "Database": ["PostgreSQL", "MongoDB", "Redis", "MySQL"],
-    "DevOps": ["Docker", "Kubernetes", "AWS", "CI/CD", "Git"]
+    "Software": ["Manoview", "Matlab", "Python", "AutoCad","Github"];
+    "Website": ["Canva","Figma"],
+    "Wet-Lab": ["Size Exclusion Chromatography", "Hemotocrit","Centrifuge"],
+
   };
 
-  const publications = [
-    {
-      title: "Optimizing React Performance in Large-Scale Applications",
-      journal: "Journal of Web Engineering",
-      year: 2025,
-      link: "#"
-    },
-    {
-      title: "Machine Learning Approaches for Real-Time Data Processing",
-      journal: "IEEE Computer Society",
-      year: 2024,
-      link: "#"
-    },
-    {
-      title: "Microservices Architecture: Best Practices and Patterns",
-      journal: "Software Engineering Monthly",
-      year: 2024,
-      link: "#"
-    }
-  ];
 
   const hobbies = [
-    { icon: <Camera className="w-6 h-6" />, name: "Photography", description: "Landscape and street photography" },
-    { icon: <Music className="w-6 h-6" />, name: "Music", description: "Playing guitar and producing electronic music" },
-    { icon: <BookOpen className="w-6 h-6" />, name: "Reading", description: "Sci-fi novels and tech blogs" },
+    { icon: <Painting className="-6 h-6" />, name: "Painting", description: "Abstract Art" },
+    { icon: <BookOpen className="w-6 h-6" />, name: "Reading", description: "Personal Development" },
     { icon: <Dumbbell className="w-6 h-6" />, name: "Fitness", description: "Weightlifting and running" }
+    { icon: <Building_website className="w-6 h-6" />, name: "Designing Websites", description: " I design websites for fun" }
+
+    
   ];
 
   return (
@@ -76,9 +57,9 @@ export default function App() {
             JD
           </div>
           <div className="flex-1">
-            <h2 className="text-4xl font-bold mb-4">Hi, I'm Kaitlyn Arabelo</h2>
+            <h2 className="text-4xl font-bold mb-4">Hi, my name is Kaitlyn</h2>
             <p className="text-xl text-slate-600 mb-6">
-              Full time Senior Undergraduate Student & Bioengineering Enthusiast
+              Graduating Senior Undergraduate Bioengineering Student 
             </p>
             <p className="text-slate-700 mb-6 leading-relaxed">
               I'm a passionate Bioengineer with over 3 years of experience building diagnostic systems. I specialize in data analysis, with a

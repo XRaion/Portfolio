@@ -11,14 +11,14 @@ export default function App() {
     {
       title: "Research Assistant - Aran Lab",
       description: "Built Microfluidics Brain on Chips",
-      tech: ["Glowforge", "SolidWorks", "Chromatography Sequencing"],
+      tech: ["Glowforge", "AutoCad", "Chromatography Sequencing"],
       link: "#"
     },
   
   ];
 
   const skills = {
-    "Software": ["Manoview", "Matlab", "Python", "AutoCad","Github"];
+    "Software": ["Manoview", "Matlab", "Python", "AutoCad","Github"],
     "Website": ["Canva","Figma"],
     "Wet-Lab": ["Size Exclusion Chromatography", "Hemotocrit","Centrifuge"],
 
@@ -63,8 +63,7 @@ export default function App() {
             </p>
             <p className="text-slate-700 mb-6 leading-relaxed">
               I'm a passionate Bioengineer with over 3 years of experience building diagnostic systems. I specialize in data analysis, with a
-              focus patient care. Currently working on cutting-edge research
-              and contributing to open-source projects.
+              focus patient care. Currently working on building a Thalassemia diagnostic biosensor monitoring system.
             </p>
             <div className="flex flex-wrap gap-4 mb-6">
               <div className="flex items-center gap-2 text-slate-600">

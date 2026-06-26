@@ -28,10 +28,7 @@ export default function App() {
   const hobbies = [
     { icon: <Painting className="-6 h-6" />, name: "Painting", description: "Abstract Art" },
     { icon: <BookOpen className="w-6 h-6" />, name: "Reading", description: "Personal Development" },
-    { icon: <Dumbbell className="w-6 h-6" />, name: "Fitness", description: "Weightlifting and running" }
-    { icon: <Building_website className="w-6 h-6" />, name: "Designing Websites", description: " I design websites for fun" }
-
-    
+    { icon: <Dumbbell className="w-6 h-6" />, name: "Fitness", description: "Weightlifting and running" },
   ];
 
   return (

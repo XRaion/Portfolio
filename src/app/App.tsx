@@ -1,4 +1,4 @@
-import { Mail, MapPin, Github, Linkedin, Code2, BookOpen, Coffee, Camera, Music, Dumbbell, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Code2, BookOpen, Coffee, Camera, Music, Dumbbell, ExternalLink, Paintbrush } from 'lucide-react';
 
 export default function App() {
   const projects = [
@@ -24,9 +24,19 @@ export default function App() {
 
   };
 
+  // Added: this was referenced below but never defined, which would throw
+  // a ReferenceError. Fill in with real publications or remove the section.
+  const publications = [
+    // {
+    //   title: "Publication title",
+    //   journal: "Journal name",
+    //   year: "2026",
+    //   link: "#"
+    // },
+  ];
 
   const hobbies = [
-    { icon: <Painting className="-6 h-6" />, name: "Painting", description: "Abstract Art" },
+    { icon: <Paintbrush className="w-6 h-6" />, name: "Painting", description: "Abstract Art" },
     { icon: <BookOpen className="w-6 h-6" />, name: "Reading", description: "Personal Development" },
     { icon: <Dumbbell className="w-6 h-6" />, name: "Fitness", description: "Weightlifting and running" },
   ];
@@ -51,7 +61,7 @@ export default function App() {
       <section id="about" className="max-w-6xl mx-auto px-6 py-20">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-6xl flex-shrink-0">
-            JD
+            KA
           </div>
           <div className="flex-1">
             <h2 className="text-4xl font-bold mb-4">Hi, my name is Kaitlyn</h2>
@@ -140,19 +150,23 @@ export default function App() {
             <BookOpen className="w-8 h-8 text-blue-600" />
             <h2 className="text-3xl font-bold">Publications</h2>
           </div>
-          <div className="space-y-6">
-            {publications.map((pub, index) => (
-              <div key={index} className="bg-slate-50 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold mb-2">{pub.title}</h3>
-                <p className="text-slate-600 mb-3">
-                  {pub.journal} • {pub.year}
-                </p>
-                <a href={pub.link} className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700">
-                  Read Publication <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
-            ))}
-          </div>
+          {publications.length === 0 ? (
+            <p className="text-slate-500">No publications yet — check back soon.</p>
+          ) : (
+            <div className="space-y-6">
+              {publications.map((pub, index) => (
+                <div key={index} className="bg-slate-50 rounded-xl p-6 hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-bold mb-2">{pub.title}</h3>
+                  <p className="text-slate-600 mb-3">
+                    {pub.journal} • {pub.year}
+                  </p>
+                  <a href={pub.link} className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700">
+                    Read Publication <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -181,7 +195,7 @@ export default function App() {
       <footer className="bg-slate-900 text-white py-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="mb-4">Let's work together!</p>
-          <p className="text-slate-400">© 2026 Jane Doe. All rights reserved.</p>
+          <p className="text-slate-400">© 2026 Kaitlyn Arabelo. All rights reserved.</p>
         </div>
       </footer>
     </div>

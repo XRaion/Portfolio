@@ -3,26 +3,19 @@ import { Mail, MapPin, Github, Linkedin, Code2, BookOpen, Coffee, Camera, Music,
 export default function App() {
   const projects = [
     {
-      title: "Research Assistant - Mittal Lab",
-      description:"Worked on developing a pipeline, Evaluated Swallowing disorders on ManoView",
-      tech: ["Python", "Matlab", "Manoview", "DPlots"],
+      title: "Student Research Assistant - Mittal Lab",
+      description: "Developed a data pipeline to evaluate patient condition"
+      technical skill: ["Python", "Matlab", "Ultrasound", "Manoview"],
       link: "https://beng187-d-group30.vercel.app/team.html"
     },
     {
-      title: "Research Assistant - Aran Lab",
+      title: "Student Research Assistant - Aran Lab",
       description: "Built Microfluidics Brain on Chips",
-      tech: ["Glowforge", "AutoCad", "Chromatography Sequencing"],
+      technical skill: ["Glowforge", "Solidworks", "Chromatography Sequencing"],
       link: "#"
     },
   
   ];
-
-  const skills = {
-    "Software": ["Manoview", "Matlab", "Python", "AutoCad","Github"],
-    "Website": ["Canva","Figma"],
-    "Wet-Lab": ["Size Exclusion Chromatography", "Hemotocrit","Centrifuge"],
-
-  };
 
   // Added: this was referenced below but never defined, which would throw
   // a ReferenceError. Fill in with real publications or remove the section.
@@ -37,7 +30,7 @@ export default function App() {
 
   const hobbies = [
     { icon: <Paintbrush className="w-6 h-6" />, name: "Painting", description: "Abstract Art" },
-    { icon: <BookOpen className="w-6 h-6" />, name: "Reading", description: "Personal Development" },
+    { icon: <BookOpen className="w-6 h-6" />, name: "Arduino", description: "Personal Development" },
     { icon: <Dumbbell className="w-6 h-6" />, name: "Fitness", description: "Weightlifting and running" },
   ];
 

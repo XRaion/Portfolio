@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MapPin, Linkedin, Code2, BookOpen, Coffee, Camera, Music, Dumbbell, ExternalLink, Paintbrush } from 'lucide-react';
+import { Mail, MapPin, Linkedin, FileText, ExternalLink, Paintbrush, Cpu, Dumbbell } from 'lucide-react';
 import profilePhoto from '@/assets/profile.jpg';
 import profilePhotoHover from '@/assets/profile-hover.jpg';
 import ResumeSection from './components/ResumeSection';
@@ -10,56 +10,57 @@ export default function App() {
 
   const projects = [
     {
-      title: "Research Assistant - Mittal Lab",
-      description: "Developed a data pipeline to evaluate patient condition",
-      tech: ["Python", "Matlab", "Ultrasound", "Manoview"],
-      link: "https://beng187-d-group30.vercel.app/team.html"
+      title: "Biomechanical HRIM: Quantifying Esophageal Mechanical Work",
+      context: "Senior Design · Mittal Lab · Sep 2025 – Jun 2026",
+      description:
+        "With a 5-person team, built a MATLAB pipeline that converts high-resolution impedance manometry data into biomechanical swallow metrics. In pre/post-dupilumab studies of 10 EoE patients, it showed significantly reduced mechanical work in 5 of 6 bolus conditions.",
+      tech: ["MATLAB", "HRIM", "Ultrasound validation", "DFMEA"],
+      link: "https://beng187-d-group30.vercel.app/",
     },
     {
-      title: "Research Assistant - Aran Lab",
-      description: "Built Microfluidics Brain on Chips",
-      tech: ["Glowforge", "Solidworks", "Chromatography Sequencing"],
-      link: "#"
+      title: "EoE Motility Visualization Tool",
+      context: "Research Assistant · Mittal Lab · Jul 2025 – Present",
+      description:
+        "Developed a Python tool that processes patient esophageal motility data and automatically generates visualizations of disease progression. Produced figures for a co-authored abstract at Digestive Disease Week 2026.",
+      tech: ["Python", "matplotlib", "ManoView", "IRB / HIPAA"],
     },
-  
+    {
+      title: "Microfluidic Blood-Brain Barrier Chip",
+      context: "Research Assistant · Aran Lab · Sep 2024 – Jun 2025",
+      description:
+        "Designed BBB chips in SolidWorks and laser-cut prototypes for iPSC neural cultures, integrating electrodes to measure barrier integrity via TEER.",
+      tech: ["SolidWorks", "Glowforge", "TEER", "iPSC culture"],
+    },
   ];
 
   const skills = {
-    "Software": ["Manoview", "Matlab", "Python", "Solidworks", "Github"],
-    "Website": ["Canva", "Figma"],
-    "Wet-Lab": ["Size Exclusion Chromatography", "Hematocrit", "Centrifuge"],
+    "Laboratory": ["Microfluidic fabrication", "Electrode integration", "TEER", "Size-exclusion chromatography", "Centrifugation", "Hematocrit"],
+    "Computational": ["Python", "MATLAB", "SolidWorks", "Git / GitHub", "Statistical analysis"],
+    "Clinical & Design": ["Medtronic ManoView", "Ultrasound data", "DFMEA", "Design traceability", "CITI · HIPAA"],
   };
 
-  // Added: this was referenced below but never defined, which would throw
-  // a ReferenceError. Fill in with real publications or remove the section.
-  const publications = [
-    // {
-    //   title: "Publication title",
-    //   journal: "Journal name",
-    //   year: "2026",
-    //   link: "#"
-    // },
+  const presentations = [
+    { title: "Co-author, EoE research abstract — Digestive Disease Week (DDW) 2026", place: "Chicago, IL", date: "May 2026" },
+    { title: "Team poster on biomechanical HRIM analysis in EoE — UC San Diego Bioengineering Day", place: "La Jolla, CA", date: "2026" },
   ];
 
   const hobbies = [
-    { icon: <Paintbrush className="w-6 h-6" />, name: "Painting", description: "Abstract Art" },
-    { icon: <BookOpen className="w-6 h-6" />, name: "Arduino", description: "Personal Development" },
+    { icon: <Paintbrush className="w-6 h-6" />, name: "Painting", description: "Abstract art" },
+    { icon: <Cpu className="w-6 h-6" />, name: "Arduino", description: "Electronics side projects" },
     { icon: <Dumbbell className="w-6 h-6" />, name: "Fitness", description: "Weightlifting and running" },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-slate-50">
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="font-bold text-xl">Portfolio</h1>
-          <div className="flex gap-6">
-            <a href="#about" className="hover:text-blue-600 transition-colors">About</a>
-            <a href="#projects" className="hover:text-blue-600 transition-colors">Projects</a>
-            <a href="#skills" className="hover:text-blue-600 transition-colors">Skills</a>
-            <a href="#publications" className="hover:text-blue-600 transition-colors">Publications</a>
-            <a href="#hobbies" className="hover:text-blue-600 transition-colors">Hobbies</a>
-            <a href="#resume" className="hover:text-blue-600 transition-colors">Resume</a>
+      <header className="bg-white/90 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
+        <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center gap-6">
+          <a href="#about" className="font-bold text-lg whitespace-nowrap">Kaitlyn Arabelo</a>
+          <div className="flex gap-6 text-sm">
+            <a href="#projects" className="hidden sm:inline hover:text-blue-600 transition-colors">Projects</a>
+            <a href="#skills" className="hidden sm:inline hover:text-blue-600 transition-colors">Skills</a>
+            <a href="#presentations" className="hidden md:inline hover:text-blue-600 transition-colors">Presentations</a>
+            <a href="#resume" className="font-medium text-blue-600 hover:text-blue-700 transition-colors">Resume</a>
           </div>
         </nav>
       </header>
@@ -84,28 +85,37 @@ export default function App() {
             />
           </div>
           <div className="flex-1">
-            <h2 className="text-4xl font-bold mb-4">Hi, my name is Kaitlyn</h2>
+            <h1 className="text-4xl font-bold mb-3">Kaitlyn Arabelo</h1>
             <p className="text-xl text-slate-600 mb-6">
-              Senior Bioengineering Undergraduate · Expected Fall 2027
+              B.S. Bioengineering, UC San Diego · Expected Fall 2027
+            </p>
+            <p className="text-slate-700 mb-4 leading-relaxed">
+              I work where medical devices meet clinical data. In the Mittal Lab, I build tools that turn esophageal
+              motility data into measurable insight for eosinophilic esophagitis (EoE) research, including work presented at
+              Digestive Disease Week 2026. Before that, I designed microfluidic blood-brain barrier chips in the Aran Lab.
             </p>
             <p className="text-slate-700 mb-6 leading-relaxed">
-              Bioengineering student with 1 year of research experience in microfluidic devices and clinical data analysis. I specialize in data analysis, with a
-              focus on patient care. Senior design: a MATLAB pipeline that quantifies esophageal mechanical work from HRIM data in EoE patients.
+              Open to internships and research roles in medical devices, biotech, and clinical research.
             </p>
-            <div className="flex flex-wrap gap-4 mb-6">
-              <div className="flex items-center gap-2 text-slate-600">
-                <MapPin className="w-4 h-4" />
-                <span>San Diego, CA</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-600">
-                <Mail className="w-4 h-4" />
-                <span>akairabelo@gmail.com</span>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <a href="https://www.linkedin.com/in/kaitlyn-arabelo" className="p-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition-colors">
-                <Linkedin className="w-5 h-5" />
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <a href="#resume" className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                <FileText className="w-4 h-4" /> Resume
               </a>
+              <a href="mailto:akairabelo@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition-colors">
+                <Mail className="w-4 h-4" /> Email
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kaitlyn-arabelo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition-colors"
+              >
+                <Linkedin className="w-4 h-4" /> LinkedIn
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-slate-500 text-sm">
+              <MapPin className="w-4 h-4" />
+              <span>San Diego, CA</span>
             </div>
           </div>
         </div>
@@ -114,12 +124,13 @@ export default function App() {
       {/* Projects Section */}
       <section id="projects" className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h2 className="text-3xl font-bold mb-12">Research & Projects</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="bg-slate-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                <p className="text-slate-600 mb-4">{project.description}</p>
+              <div key={index} className="bg-slate-50 rounded-xl p-6 flex flex-col">
+                <h3 className="text-xl font-bold mb-1">{project.title}</h3>
+                <p className="text-sm text-slate-500 mb-3">{project.context}</p>
+                <p className="text-slate-600 mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
                     <span key={i} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
@@ -127,9 +138,16 @@ export default function App() {
                     </span>
                   ))}
                 </div>
-                <a href={project.link} className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700">
-                  View Project <ExternalLink className="w-4 h-4" />
-                </a>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center gap-2 text-blue-600 hover:text-blue-700"
+                  >
+                    Project site <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -139,10 +157,7 @@ export default function App() {
       {/* Technical Skills Section */}
       <section id="skills" className="py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-12">
-            <Code2 className="w-8 h-8 text-blue-600" />
-            <h2 className="text-3xl font-bold">Technical Skills</h2>
-          </div>
+          <h2 className="text-3xl font-bold mb-12">Technical Skills</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Object.entries(skills).map(([category, items]) => (
               <div key={category} className="bg-white rounded-xl p-6 shadow-sm">
@@ -160,43 +175,31 @@ export default function App() {
         </div>
       </section>
 
-      {/* Publications Section */}
-      <section id="publications" className="bg-white py-20">
+      {/* Presentations Section */}
+      <section id="presentations" className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-12">
-            <BookOpen className="w-8 h-8 text-blue-600" />
-            <h2 className="text-3xl font-bold">Publications</h2>
-          </div>
-          {publications.length === 0 ? (
-            <p className="text-slate-500">No publications yet - check back soon.</p>
-          ) : (
-            <div className="space-y-6">
-              {publications.map((pub, index) => (
-                <div key={index} className="bg-slate-50 rounded-xl p-6 hover:shadow-md transition-shadow">
-                  <h3 className="text-lg font-bold mb-2">{pub.title}</h3>
-                  <p className="text-slate-600 mb-3">
-                    {pub.journal} • {pub.year}
-                  </p>
-                  <a href={pub.link} className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700">
-                    Read Publication <ExternalLink className="w-4 h-4" />
-                  </a>
+          <h2 className="text-3xl font-bold mb-12">Presentations</h2>
+          <div className="space-y-4">
+            {presentations.map((item, index) => (
+              <div key={index} className="bg-slate-50 rounded-xl p-6 flex flex-col sm:flex-row sm:justify-between gap-2">
+                <div>
+                  <h3 className="font-bold mb-1">{item.title}</h3>
+                  <p className="text-slate-600 text-sm">{item.place}</p>
                 </div>
-              ))}
-            </div>
-          )}
+                <p className="text-slate-500 text-sm whitespace-nowrap">{item.date}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Hobbies Section */}
       <section id="hobbies" className="py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-12">
-            <Coffee className="w-8 h-8 text-blue-600" />
-            <h2 className="text-3xl font-bold">Hobbies & Interests</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-3xl font-bold mb-12">Outside the Lab</h2>
+          <div className="grid sm:grid-cols-3 gap-6">
             {hobbies.map((hobby, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+              <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-4">
                   {hobby.icon}
                 </div>
@@ -211,10 +214,16 @@ export default function App() {
       <ResumeSection />
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12">
+      <footer className="border-t border-slate-200 py-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="mb-4">Let's work together!</p>
-          <p className="text-slate-400">© 2026 Kaitlyn Arabelo. All rights reserved.</p>
+          <p className="text-lg font-bold mb-2">Let's work together</p>
+          <p className="text-slate-600 mb-6">
+            Reach me at{' '}
+            <a href="mailto:akairabelo@gmail.com" className="text-blue-600 hover:text-blue-700">akairabelo@gmail.com</a>
+            {' '}or on{' '}
+            <a href="https://www.linkedin.com/in/kaitlyn-arabelo" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700">LinkedIn</a>.
+          </p>
+          <p className="text-slate-400 text-sm">© 2026 Kaitlyn Arabelo</p>
         </div>
       </footer>
     </div>

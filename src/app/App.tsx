@@ -1,21 +1,33 @@
-import { Mail, MapPin, Github, Linkedin, Code2, BookOpen, Coffee, Camera, Music, Dumbbell, ExternalLink, Paintbrush } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, MapPin, Linkedin, Code2, BookOpen, Coffee, Camera, Music, Dumbbell, ExternalLink, Paintbrush } from 'lucide-react';
+import profilePhoto from '@/assets/profile.jpg';
+import profilePhotoHover from '@/assets/profile-hover.jpg';
 
 export default function App() {
+  // Touch screens have no hover, so tapping the photo toggles it instead.
+  const [showAltPhoto, setShowAltPhoto] = useState(false);
+
   const projects = [
     {
-      title: "Student Research Assistant - Mittal Lab",
-      description: "Developed a data pipeline to evaluate patient condition"
-      technical skill: ["Python", "Matlab", "Ultrasound", "Manoview"],
+      title: "Research Assistant - Mittal Lab",
+      description: "Developed a data pipeline to evaluate patient condition",
+      tech: ["Python", "Matlab", "Ultrasound", "Manoview"],
       link: "https://beng187-d-group30.vercel.app/team.html"
     },
     {
-      title: "Student Research Assistant - Aran Lab",
+      title: "Research Assistant - Aran Lab",
       description: "Built Microfluidics Brain on Chips",
-      technical skill: ["Glowforge", "Solidworks", "Chromatography Sequencing"],
+      tech: ["Glowforge", "Solidworks", "Chromatography Sequencing"],
       link: "#"
     },
   
   ];
+
+  const skills = {
+    "Software": ["Manoview", "Matlab", "Python", "Solidworks", "Github"],
+    "Website": ["Canva", "Figma"],
+    "Wet-Lab": ["Size Exclusion Chromatography", "Hematocrit", "Centrifuge"],
+  };
 
   // Added: this was referenced below but never defined, which would throw
   // a ReferenceError. Fill in with real publications or remove the section.
@@ -53,33 +65,43 @@ export default function App() {
       {/* Hero / About Section */}
       <section id="about" className="max-w-6xl mx-auto px-6 py-20">
         <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-6xl flex-shrink-0">
-            KA
+          <div
+            className="group relative w-48 h-48 rounded-full overflow-hidden shadow-lg ring-4 ring-white flex-shrink-0 cursor-pointer"
+            onClick={() => setShowAltPhoto((v) => !v)}
+          >
+            <img
+              src={profilePhoto}
+              alt="Kaitlyn Arabelo"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <img
+              src={profilePhotoHover}
+              alt=""
+              aria-hidden="true"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-100 ${showAltPhoto ? 'opacity-100' : 'opacity-0'}`}
+            />
           </div>
           <div className="flex-1">
             <h2 className="text-4xl font-bold mb-4">Hi, my name is Kaitlyn</h2>
             <p className="text-xl text-slate-600 mb-6">
-              Graduating Senior Undergraduate Bioengineering Student 
+              Senior Bioengineering Undergraduate · Expected Fall 2027
             </p>
             <p className="text-slate-700 mb-6 leading-relaxed">
-              I'm a passionate Bioengineer with over 3 years of experience building diagnostic systems. I specialize in data analysis, with a
-              focus patient care. Currently working on building a Thalassemia diagnostic biosensor monitoring system.
+              Bioengineering student with 1 year of research experience in microfluidic devices and clinical data analysis. I specialize in data analysis, with a
+              focus on patient care. Senior design: a MATLAB pipeline that quantifies esophageal mechanical work from HRIM data in EoE patients.
             </p>
             <div className="flex flex-wrap gap-4 mb-6">
               <div className="flex items-center gap-2 text-slate-600">
                 <MapPin className="w-4 h-4" />
-                <span>San Francisco, CA</span>
+                <span>San Diego, CA</span>
               </div>
               <div className="flex items-center gap-2 text-slate-600">
                 <Mail className="w-4 h-4" />
-                <span>Kaitlynarabelo@gmail.com</span>
+                <span>akairabelo@gmail.com</span>
               </div>
             </div>
             <div className="flex gap-4">
-              <a href="#" className="p-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition-colors">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition-colors">
+              <a href="https://www.linkedin.com/in/kaitlyn-arabelo" className="p-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -144,7 +166,7 @@ export default function App() {
             <h2 className="text-3xl font-bold">Publications</h2>
           </div>
           {publications.length === 0 ? (
-            <p className="text-slate-500">No publications yet — check back soon.</p>
+            <p className="text-slate-500">No publications yet - check back soon.</p>
           ) : (
             <div className="space-y-6">
               {publications.map((pub, index) => (

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mail, MapPin, Linkedin, Code2, BookOpen, Coffee, Camera, Music, Dumbbell, ExternalLink, Paintbrush } from 'lucide-react';
 import profilePhoto from '@/assets/profile.jpg';
 import profilePhotoHover from '@/assets/profile-hover.jpg';
+import ResumeSection from './components/ResumeSection';
 
 export default function App() {
   // Touch screens have no hover, so tapping the photo toggles it instead.
@@ -58,6 +59,7 @@ export default function App() {
             <a href="#skills" className="hover:text-blue-600 transition-colors">Skills</a>
             <a href="#publications" className="hover:text-blue-600 transition-colors">Publications</a>
             <a href="#hobbies" className="hover:text-blue-600 transition-colors">Hobbies</a>
+            <a href="#resume" className="hover:text-blue-600 transition-colors">Resume</a>
           </div>
         </nav>
       </header>
@@ -205,6 +207,8 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      <ResumeSection />
 
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-12">

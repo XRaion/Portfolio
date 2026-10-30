@@ -103,8 +103,8 @@ export default function App() {
             </p>
             <p className="text-slate-700 mb-4 leading-relaxed">
               I've spent two years working in research labs, contributing to projects in computational design and
-              biofabrication. Outside the lab, I compete in hackathons, where my teams have earned several wins. I'm
-              currently working with a team on a protein design project for Adaptyv.
+              biofabrication. Outside the lab, I compete in hackathons, where my team took 3rd place at Biodefense San
+              Diego. I'm currently working with a team on a protein design project for Adaptyv.
             </p>
             <p className="text-slate-700 mb-4 leading-relaxed">
               I come from a low-income background, where opportunities in science were hard to find and even harder to
@@ -112,7 +112,7 @@ export default function App() {
               of why I want to build technology that reaches more people.
             </p>
             <p className="text-slate-700 mb-4 leading-relaxed">
-              Through my engineering student club, I've learned how to work on a team, ship projects on tight deadlines, and
+              Through the engineering club Triton Droids, I've learned how to work on a team, ship projects on tight deadlines, and
               pick up new tools quickly. Now I want to learn how medical devices and robotic systems are built in industry,
               from prototyping to production.
             </p>

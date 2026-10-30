@@ -97,12 +97,27 @@ export default function App() {
               B.S. Bioengineering, UC San Diego · Expected Fall 2027
             </p>
             <p className="text-slate-700 mb-4 leading-relaxed">
-              I work where medical devices meet clinical data. In the Mittal Lab, I build tools that turn esophageal
-              motility data into measurable insight for eosinophilic esophagitis (EoE) research, including work presented at
-              Digestive Disease Week 2026. Before that, I designed microfluidic blood-brain barrier chips in the Aran Lab.
+              I'm Kaitlyn, a bioengineering student at UC San Diego (graduating December 2027) who loves building things
+              that help people. My focus is medical devices and robotics, especially the hardware and embedded systems that
+              make them work.
             </p>
-            <p className="text-slate-700 mb-6 leading-relaxed">
-              Open to internships and research roles in medical devices, biotech, and clinical research.
+            <p className="text-slate-700 mb-4 leading-relaxed">
+              I've spent two years working in research labs, contributing to projects in computational design and
+              biofabrication. Outside the lab, I compete in hackathons, where my teams have earned several wins. I'm
+              currently working with a team on a protein design project for Adaptyv.
+            </p>
+            <p className="text-slate-700 mb-4 leading-relaxed">
+              I come from a low-income background, where opportunities in science were hard to find and even harder to
+              access. Conversations with scientists and PhD students showed me how wide that gap is, and they're a big part
+              of why I want to build technology that reaches more people.
+            </p>
+            <p className="text-slate-700 mb-4 leading-relaxed">
+              Through my engineering student club, I've learned how to work on a team, ship projects on tight deadlines, and
+              pick up new tools quickly. Now I want to learn how medical devices and robotic systems are built in industry,
+              from prototyping to production.
+            </p>
+            <p className="text-slate-700 mb-6 leading-relaxed font-medium">
+              I'm open to internships and full-time roles. Let's talk.
             </p>
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <a href="#resume" className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">

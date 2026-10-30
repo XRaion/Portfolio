@@ -33,7 +33,7 @@ export default function App() {
     },
     {
       title: "Tactical Bio-Core",
-      context: "Bio Defense Hackathon · 24 hours",
+      context: "3rd Place · Biodefense San Diego Hackathon · 24 hours",
       description:
         "With a team, designed a portable, solar-powered bioreactor that manufactures a three-part probiotic in the field for warfighters recovering from gastrointestinal illness. Using BindCraft2 (~12 hours), I designed a VHH nanobody against CfaE, the fimbrial adhesin enterotoxigenic E. coli uses to grip the gut wall but commensal E. coli lacks, so capping it clears the pathogen while leaving the rest of the microbiome intact. The nanobody expresses from L. lactis, a food-grade probiotic, so the reactor grows the producer instead of purifying a protein: no cold chain and a self-renewing supply that complements antibiotics rather than replacing them. Packaged with two proven probiotic organisms as single-dose sachets. As an in silico design, binding confirmation and toxicity screening come next.",
       tech: ["BindCraft2", "VHH nanobody design", "L. lactis expression", "Bioreactor design", "Synthetic biology"],

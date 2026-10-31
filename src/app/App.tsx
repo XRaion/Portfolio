@@ -1,10 +1,12 @@
 import { useState, type ReactNode } from 'react';
-import { Mail, MapPin, Linkedin, FileText, ExternalLink, Paintbrush, Dumbbell, Dna, Bot, ChevronDown } from 'lucide-react';
+import { Mail, MapPin, Linkedin, FileText, ExternalLink, Paintbrush, Dumbbell, Dna, Bot, ChevronDown, Presentation } from 'lucide-react';
 import profilePhoto from '@/assets/profile.jpg';
 import robotPhoto from '@/assets/projects/robot.webp';
 import biodefensePhoto from '@/assets/projects/biodefense-team.webp';
 import arduinoPhoto from '@/assets/projects/arduino.webp';
 import conveyorPhoto from '@/assets/projects/conveyor.webp';
+import gearPosterPhoto from '@/assets/projects/gear-poster.webp';
+import bedayPosterPhoto from '@/assets/projects/beday-poster.webp';
 import profilePhotoHover from '@/assets/profile-hover.jpg';
 import ResumeSection from './components/ResumeSection';
 
@@ -118,9 +120,30 @@ export default function App() {
     "Clinical & Design": ["Medtronic ManoView", "Ultrasound data", "DFMEA", "Design traceability", "CITI · HIPAA"],
   };
 
-  const presentations = [
-    { title: "Co-author, EoE research abstract — Digestive Disease Week (DDW) 2026", place: "Chicago, IL", date: "May 2026" },
-    { title: "Team poster on biomechanical HRIM analysis in EoE — UC San Diego Bioengineering Day", place: "La Jolla, CA", date: "2026" },
+  const presentations: PresentationItem[] = [
+    {
+      title: "Co-author, EoE research abstract",
+      event: "Digestive Disease Week (DDW) 2026",
+      place: "Chicago, IL",
+      date: "May 2026",
+      icon: <Presentation className="w-12 h-12" />,
+    },
+    {
+      title: "Team poster: Biomechanical Work Analysis on Patients with Dysphagia Using HRIM",
+      event: "UC San Diego Bioengineering Day",
+      place: "La Jolla, CA",
+      date: "2026",
+      image: bedayPosterPhoto,
+      imageAlt: "Kaitlyn with her senior design team and mentor beside their HRIM poster at Bioengineering Day",
+    },
+    {
+      title: "Poster: Design and Validation of a BBB-on-Chip Device for Aging and Neurodegenerative Disease Research",
+      event: "GEAR poster session · Aran Lab",
+      place: "UC San Diego",
+      image: gearPosterPhoto,
+      imageAlt: "Kaitlyn holding a microfluidic chip beside her blood-brain barrier chip poster",
+      imagePosition: "center 40%",
+    },
   ];
 
   return (
@@ -308,14 +331,18 @@ export default function App() {
       <section id="presentations" className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12">Presentations</h2>
-          <div className="space-y-4">
-            {presentations.map((item, index) => (
-              <div key={index} className="bg-slate-50 rounded-xl p-6 flex flex-col sm:flex-row sm:justify-between gap-2">
-                <div>
-                  <h3 className="font-bold mb-1">{item.title}</h3>
-                  <p className="text-slate-600 text-sm">{item.place}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {presentations.map((item) => (
+              <div key={item.title} className="bg-slate-50 rounded-xl overflow-hidden flex flex-col">
+                <CardMedia image={item.image} imageAlt={item.imageAlt} imagePosition={item.imagePosition} icon={item.icon} />
+                <div className="p-6">
+                  <h3 className="font-bold mb-2 leading-snug">{item.title}</h3>
+                  <p className="text-slate-600 text-sm">{item.event}</p>
+                  <p className="text-slate-500 text-sm">
+                    {item.place}
+                    {item.date && ` · ${item.date}`}
+                  </p>
                 </div>
-                <p className="text-slate-500 text-sm whitespace-nowrap">{item.date}</p>
               </div>
             ))}
           </div>
@@ -361,6 +388,17 @@ type ResearchLab = {
   image?: string;
   imageAlt?: string;
   items: { title: string; context?: string; description: string; tech: string[]; link?: string }[];
+};
+
+type PresentationItem = {
+  title: string;
+  event: string;
+  place: string;
+  date?: string;
+  image?: string;
+  imageAlt?: string;
+  imagePosition?: string;
+  icon?: ReactNode;
 };
 
 type Activity = {

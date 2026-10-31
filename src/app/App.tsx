@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { Mail, MapPin, Linkedin, FileText, ExternalLink, Paintbrush, Dumbbell, Dna, Bot, ChevronDown, Presentation } from 'lucide-react';
+import { Mail, MapPin, Linkedin, FileText, ExternalLink, Paintbrush, Dumbbell, Dna, ChevronDown, Presentation } from 'lucide-react';
 import profilePhoto from '@/assets/profile.jpg';
 import robotPhoto from '@/assets/projects/robot.webp';
 import biodefensePhoto from '@/assets/projects/biodefense-team.webp';
@@ -45,14 +45,6 @@ export default function App() {
       image: conveyorPhoto,
       imageAlt: "3D-printed orange and yellow conveyor belt mechanism clamped to a test rig",
     },
-    {
-      title: "Protein Design for Adaptyv",
-      context: "Team project · In progress",
-      summary:
-        "Working with a team on computational protein design for Adaptyv.",
-      tech: ["Protein design", "Computational design"],
-      icon: <Dna className="w-12 h-12" />,
-    },
   ];
 
   const research: ResearchLab[] = [
@@ -93,12 +85,6 @@ export default function App() {
   ];
 
   const activities: Activity[] = [
-    {
-      title: "Triton Droids",
-      context: "Engineering student club · UC San Diego",
-      description: "Where I've learned to work on a team, ship projects on tight deadlines, and pick up new tools quickly.",
-      icon: <Bot className="w-12 h-12" />,
-    },
     {
       title: "Hackathons",
       context: "3rd Place · Biodefense San Diego",
@@ -188,9 +174,9 @@ export default function App() {
               B.S. Bioengineering, UC San Diego · Expected Fall 2027
             </p>
             <p className="text-slate-700 mb-4 leading-relaxed">
-              I'm Kaitlyn, a bioengineering student at UC San Diego (graduating December 2027) who loves building things
-              that help people. My focus is medical devices and robotics, especially the hardware and embedded systems that
-              make them work.
+              I'm Kaitlyn, a bioengineering student at UC San Diego (graduating December 2027) who loves building
+              technology that helps people. My focus is medical devices and robotics, especially the hardware and embedded
+              systems that make them work.
             </p>
             <p className="text-slate-700 mb-4 leading-relaxed">
               I've spent two years working in research labs, contributing to projects in computational design and
@@ -198,17 +184,12 @@ export default function App() {
               Diego. I'm currently working with a team on a protein design project for Adaptyv.
             </p>
             <p className="text-slate-700 mb-4 leading-relaxed">
-              I come from a low-income background, where opportunities in science were hard to find and even harder to
-              access. Conversations with scientists and PhD students showed me how wide that gap is, and they're a big part
-              of why I want to build technology that reaches more people.
-            </p>
-            <p className="text-slate-700 mb-4 leading-relaxed">
-              Through the engineering club Triton Droids, I've learned how to work on a team, ship projects on tight deadlines, and
-              pick up new tools quickly. Now I want to learn how medical devices and robotic systems are built in industry,
-              from prototyping to production.
+              I come from a low-income background, where opportunities in science were hard to find. Conversations with
+              scientists and PhD students from networking events showed me how wide that gap is, and they're a big part of
+              why I want to build technology that reaches more people.
             </p>
             <p className="text-slate-700 mb-6 leading-relaxed font-medium">
-              I'm open to internships and full-time roles. Let's talk.
+              I'm open to internships and full-time roles. Please reach out!
             </p>
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <a href="#resume" className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
@@ -286,7 +267,7 @@ export default function App() {
       <section id="activities" className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12">Activities &amp; Interests</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6">
             {activities.map((activity) => (
               <div key={activity.title} className="bg-slate-50 rounded-xl overflow-hidden flex flex-col">
                 <CardMedia image={activity.image} imageAlt={activity.imageAlt} icon={activity.icon} />

@@ -16,23 +16,23 @@ export default function App() {
 
   const projects: Project[] = [
     {
-      title: "Firefighting Robot Prototype",
-      context: "Hardware prototype",
+      title: "Firefighter-Support Robot Dog",
+      context: "Top 5 Finalist · Compile Hackathon, UC San Diego · Oct 2026",
       summary:
-        "A quadruped robot built to support firefighters: it detects gas leaks and flames, then sends its live location so responders can track it to the fire. I wired the sensors into the robot's electronics.",
-      tech: ["Gas sensing", "Flame detection", "Live location tracking", "Sensor wiring", "Embedded hardware"],
+        "A quadruped robot built to support firefighters. I wired the gas and flame sensors so the robot flashes a warning when it detects gas and sends responders its live location, then pitched the design to judges and ran the live demo for the team.",
+      tech: ["Sensor wiring", "Gas sensing", "Flame detection", "Live location tracking", "Live demo"],
       image: robotPhoto,
       imagePosition: "center 25%",
       imageAlt: "Quadruped robot prototype with a mounted sensor, wired gas sensor, and power regulator boards",
     },
     {
       title: "Tactical Bio-Core",
-      context: "3rd Place · Biodefense San Diego Hackathon · 24 hours",
+      context: "3rd Place · Biodefense Hackathon, San Diego · Oct 2026",
       summary:
-        "With a team, designed a portable, solar-powered bioreactor that produces a three-part probiotic in the field for warfighters recovering from gastrointestinal illness. I worked on the prototype's 3D-printed housing and helped with the wiring by soldering pins onto the sensors.",
+        "With a team, designed a portable, solar-powered bioreactor that produces a three-part probiotic in the field for warfighters recovering from gastrointestinal illness. I designed and built the 3D-printed housing and soldered the gas and temperature/humidity modules for the ESP32 system that monitors external conditions. It worked in the live demo.",
       details:
         "The team used BindCraft2 to design a VHH nanobody against CfaE, the fimbrial adhesin enterotoxigenic E. coli uses to grip the gut wall but commensal E. coli lacks, so capping it clears the pathogen while leaving the rest of the microbiome intact. It expresses from L. lactis, a food-grade probiotic, so the reactor grows the producer instead of purifying a protein: no cold chain and a self-renewing supply that complements antibiotics rather than replacing them. Packaged with two proven probiotic organisms as single-dose sachets. As an in silico design, binding confirmation and toxicity screening come next.",
-      tech: ["3D printing", "Enclosure design", "Soldering", "Sensor wiring", "Bioreactor prototype"],
+      tech: ["3D printing", "Enclosure design", "Soldering", "ESP32", "Environmental sensors"],
       image: biodefensePhoto,
       imageAlt: "Kaitlyn and her four teammates at Biodefense San Diego holding their bioreactor prototype",
     },
@@ -87,8 +87,8 @@ export default function App() {
   const activities: Activity[] = [
     {
       title: "Hackathons",
-      context: "3rd Place · Biodefense San Diego",
-      description: "24-hour builds with interdisciplinary teams. See Tactical Bio-Core under Projects.",
+      context: "3rd Place, Biodefense San Diego · Top 5, Compile Hackathon",
+      description: "Fast builds with interdisciplinary teams. See Tactical Bio-Core and the Firefighter-Support Robot Dog under Projects.",
       icon: <Dna className="w-12 h-12" />,
     },
     {
@@ -101,15 +101,17 @@ export default function App() {
   ];
 
   const skills = {
-    "Laboratory": ["Microfluidic fabrication", "Electrode integration", "TEER", "Size-exclusion chromatography", "Centrifugation", "Hematocrit"],
-    "Computational": ["Python", "MATLAB", "SolidWorks", "Git / GitHub", "Statistical analysis"],
-    "Clinical & Design": ["Medtronic ManoView", "Ultrasound data", "DFMEA", "Design traceability", "CITI · HIPAA"],
+    "CAD & Prototyping": ["SolidWorks", "Fusion 360", "Laser cutting", "3D printing", "Arduino & sensors", "Soldering"],
+    "Software & Data": ["Python (matplotlib)", "MATLAB", "Excel", "SQL", "Statistical validation (t-tests, regression)"],
+    "Testing & Lab": ["TEER", "Size-exclusion chromatography", "Centrifugation", "ManoView (HRM)", "Microfluidic fabrication"],
+    "Design Controls & Risk": ["DFMEA", "CGMP (coursework)", "Regulatory pathways: PMA, 510(k) (coursework)"],
+    "Training": ["CITI Human Subjects Research", "HIPAA", "Laboratory Safety"],
   };
 
   const presentations: PresentationItem[] = [
     {
-      title: "Co-author, EoE research abstract",
-      event: "Digestive Disease Week (DDW) 2026",
+      title: "Co-author: Dupilumab Decreases Esophageal Workload During Bolus Transport in Patients with EoE",
+      event: "Digestive Disease Week (DDW) 2026 · Gastrointestinal Endoscopy",
       place: "Chicago, IL",
       date: "May 2026",
       icon: <Presentation className="w-12 h-12" />,
@@ -123,9 +125,10 @@ export default function App() {
       imageAlt: "Kaitlyn with her senior design team and mentor beside their HRIM poster at Bioengineering Day",
     },
     {
-      title: "Poster: Design and Validation of a BBB-on-Chip Device for Aging and Neurodegenerative Disease Research",
-      event: "GEAR poster session · Aran Lab",
-      place: "UC San Diego",
+      title: "Presenter: Design and Validation of a BBB-on-Chip Device for Aging and Neurodegenerative Disease Research",
+      event: "GEAR research poster · Aran Lab",
+      place: "La Jolla, CA",
+      date: "May 2025",
       image: gearPosterPhoto,
       imageAlt: "Kaitlyn holding a microfluidic chip beside her blood-brain barrier chip poster",
       imagePosition: "center 40%",
